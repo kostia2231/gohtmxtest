@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./src/output.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="bg-black h-screen w-screen text-white p-10">
+            {{ range .Films }}
+
+            <div class="py-1 border p-1 my-2 rounded w-[400px]">
+                <p>{{ .Title }} - {{ .Director }}</p>
+            </div>
+            {{ end }}
+
+            <form class="flex flex-col gap-5 w-[400px] mt-5">
+                <div class="flex items-center justify-between">
+                    <label for="film-title">Title:</label>
+                    <input
+                        type="text"
+                        name="title"
+                        id="film-title"
+                        class="bg-white rounded-xl text-black p-2 ml-2"
+                    />
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <label for="film-director">Director:</label>
+                    <input
+                        type="text"
+                        name="director"
+                        id="film-director"
+                        class="bg-white rounded-xl text-black p-2 ml-2"
+                    />
+                </div>
+
+                <button
+                    type="submit"
+                    class="cursor-pointer p-2 bg-white text-black rounded-xl"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
